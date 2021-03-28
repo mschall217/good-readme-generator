@@ -307,7 +307,7 @@ const generateMarkdown = (answers) => {
   const content = 
   `
   ${licenseBadge(answers.license)}
-  ## ${generateRepoName(answers.title)}
+  #${generateRepoName(answers.title)}
 
   ${answers.description}
   
