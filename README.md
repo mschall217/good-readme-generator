@@ -9,6 +9,7 @@
   
   - [Installation](#installation)
   - [Usage](#usage)
+  - [GIF](#gif)
   - [Testing](#testing)
   - [Support](#support)
   - [Contributing](#contributing)
@@ -22,6 +23,10 @@
   ## Usage
   
   As the description says this can be used by any one making an open source project for GitHub. This program takes an extra step off the developers shoulders.
+
+  ## Gif 
+
+  ![gif](video/good-readme-generator.gif)
   
   ## Testing
 
