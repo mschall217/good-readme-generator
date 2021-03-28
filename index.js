@@ -308,7 +308,7 @@ const generateMarkdown = (answers) => {
   `
   ${licenseBadge(answers.license)}
 
-  # ${generateRepoName(answers.title)}
+  #${generateRepoName(answers.title)}
 
   ${answers.description}
   
@@ -347,7 +347,7 @@ const generateMarkdown = (answers) => {
   ${licenseChoice(answers.license, answers.name)}
   
   ## Questions 
-  If you have any questions or concerns please reach out to ${answers.name} on my GitHub ${answers.github} or email me at ${answers.email} 
+  If you have any questions or concerns please reach out to ${answers.name} on GitHub at ${answers.github} or email at ${answers.email} 
   `
   return content;
 }
@@ -413,7 +413,7 @@ const init = () => {
   promptUser()
   .then((answers) => {
     fs.writeFile('README.md', generateMarkdown(answers), (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
+      err ? console.log(err) : console.log('Successfully created a read me!')
     );
   });
 }
