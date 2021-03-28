@@ -315,10 +315,11 @@ const generateMarkdown = (answers) => {
   
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Test](#test)
+  - [Testing](#testing)
   - [Support](#support)
   - [Contributing](#contributing)
   - [License](#license)
+  - [Questions](#questions)
   
   ## Installation
 
@@ -328,7 +329,7 @@ const generateMarkdown = (answers) => {
   
   ${answers.usage}
   
-  ## Test
+  ## Testing
 
   ${answers.test}
   
@@ -340,11 +341,11 @@ const generateMarkdown = (answers) => {
   
   ${answers.contribution}
   
-  ## License
+  ##License
 
   ${licenseChoice(answers.license, answers.name)}
   
-  ## Questions 
+  ##Questions 
   If you have any questions or concerns please reach out to ${answers.name} on my GitHub ${answers.github} or email me at ${answers.email} 
   `
   return content;
