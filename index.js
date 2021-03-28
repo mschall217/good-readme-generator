@@ -342,11 +342,11 @@ const generateMarkdown = (answers) => {
   
   ${answers.contribution}
   
-  ##License
+  ## License
 
   ${licenseChoice(answers.license, answers.name)}
   
-  ##Questions 
+  ## Questions 
   If you have any questions or concerns please reach out to ${answers.name} on my GitHub ${answers.github} or email me at ${answers.email} 
   `
   return content;
