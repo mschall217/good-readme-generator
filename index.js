@@ -5,10 +5,11 @@ const fs = require('fs');
 //allows us to write files
 
 const generateRepoName = (title) => {
-  const repoName = title.split(' ').join("-")
+  const titleIn = title.toLowerCase();
+  const repoName = titleIn.split(' ').join("-")
   return `${repoName}`;
 };
-
+//repo names look the best when they are formatted with all lower cases and seperated by dashes not spaces
 const licenseChoice = (choice, name) => {
   if(choice == 'MIT'){
     const MIT = `MIT License
@@ -287,6 +288,7 @@ See the License for the specific language governing permissions and
     return unlicense;
   }
 }
+//this function enters the users chosen license
 const licenseBadge = (choice) => {
   const licTypes = {
     'MIT' : 'MIT',
@@ -297,6 +299,10 @@ const licenseBadge = (choice) => {
   } 
   return `![License](https://img.shields.io/badge/License-${licTypes[choice]}-green.svg)`
 }
+//this function generates a badge based on user choices
+//I used an object so if I want to add more license the badges don't always show the full name
+//some have abbreviations so the key/data combo can account for that 
+
 const generateMarkdown = (answers) => {
   const content = 
   `
@@ -339,10 +345,11 @@ const generateMarkdown = (answers) => {
   ${licenseChoice(answers.license, answers.name)}
   
   ## Questions 
-  If you have any questions or concerns please reach out to me on my GitHub ${answers.github} or email me at ${answers.email} 
+  If you have any questions or concerns please reach out to ${answers.name} on my GitHub ${answers.github} or email me at ${answers.email} 
   `
   return content;
 }
+//this funciton generates the readMe 
 
 const promptUser = () => {
   return inquirer.prompt([
@@ -350,7 +357,7 @@ const promptUser = () => {
       type: 'input',
       name: 'name',
       message: 'Enter your name!',
-    },
+    },//not required but needed for licenses and contact info 
     {
       type: 'input',
       name: 'title',
