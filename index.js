@@ -287,10 +287,21 @@ See the License for the specific language governing permissions and
     return unlicense;
   }
 }
-
+const licenseBadge = (choice) => {
+  const licTypes = {
+    'MIT' : 'MIT',
+    'Free Public Licesnce' : 'FPL',
+    'Apache License 2.0' : 'Apache License 2.0',
+    'BSD 3-Clause' : 'BSD 3-Clause',
+    'The Unlicense' : ''
+  } 
+  return `![License](https://img.shields.io/badge/License-${licTypes[choice]}-green.svg)`
+}
 const generateMarkdown = (answers) => {
   const content = 
-  `## ${generateRepoName(answers.title)}
+  `
+  ${licenseBadge(answers.license)}
+  ## ${generateRepoName(answers.title)}
 
   ${answers.description}
   
@@ -305,15 +316,15 @@ const generateMarkdown = (answers) => {
   
   ## Installation
 
-    ${answers.install}
+  ${answers.install}
   
   ## Usage
   
-    ${answers.usage}
+  ${answers.usage}
   
   ## Test
 
-    ${answers.test}
+  ${answers.test}
   
   ## Support
   
